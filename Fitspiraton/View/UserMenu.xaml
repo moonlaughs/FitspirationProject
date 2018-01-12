@@ -1,0 +1,121 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:Fitspiraton.ViewModel"
+    x:Class="Fitspiraton.View.UserMenu"
+    mc:Ignorable="d" Loading="ItsLoading" Loaded="ItsLoaded">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <EdgeUIThemeTransition Edge="Left" />
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.465">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="White" Offset="0.018"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.DataContext>
+            <ViewModel:UserMenuVm/>
+        </Grid.DataContext>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="#FF252932">
+            <Grid Height="1080">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="44*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="../Assets/fitspiration_logo Orange.png" VerticalAlignment="Center" HorizontalAlignment="Left" Stretch="Uniform" Margin="20,10,0,10"/>
+
+                <StackPanel Grid.Row="1">
+                    <Ellipse Height="190" Width="190" Margin="0,20,0,0" HorizontalAlignment="Center" Stroke="White" StrokeThickness="10">
+                        <Ellipse.Fill>
+                            <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Image, Mode=TwoWay}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <TextBlock Text="{Binding Name, Mode=TwoWay}" FontSize="32" HorizontalAlignment="Center" Foreground="White" Margin="0,5,0,5"/>
+
+                    <StackPanel Orientation="Horizontal" Height="35" HorizontalAlignment="Center" Margin="0,10,0,5">
+                        <Image Source="../Assets/ID Icon2White.png"  Stretch="UniformToFill"/>
+                        <TextBlock Text="{Binding Id, Mode=TwoWay}" Margin="10,10,0,0"  FontSize="15" FontFamily="Leelawadee" FontWeight="Light" Foreground="White"/>
+                    </StackPanel>
+
+                  
+                </StackPanel>
+
+                <StackPanel Grid.Row="2">
+
+                    <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
+                    <Button x:Name="ProfileBtn" Click="ProfileBtn_OnClicked" 
+                            Margin="0,0,0,0" Height="100" Width="480" FontSize="32" Foreground="Gray" BorderBrush="Transparent" Background="Transparent">
+                        <StackPanel Orientation="Horizontal" Width="370">
+                            <Image Source="../Assets/ProfileIconWhite.png" 
+                                   Margin="10,0,08,0" Height="55" Width="55"/>
+                            <TextBlock Text="Profile" 
+                                       FontSize="32" FontFamily="Leelawadee" VerticalAlignment="Center" Foreground="White" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
+
+                    <Button x:Name="RecentBookingBtn" Click="RcentBtn_OnClicked" 
+                            Margin="0,0,0,0" Height="100" Width="480" FontSize="32" Foreground="Gray" BorderBrush="Transparent" Background="Transparent">
+                        <StackPanel Orientation="Horizontal" Width="370">
+                            <Image Source="../Assets/HistoryIconWhite.png"
+                                   Margin="10,0,10,0" Height="50" Width="50"/>
+                            <TextBlock Text="History" 
+                                       FontSize="32" FontFamily="Leelawadee" VerticalAlignment="Center" Foreground="White" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
+
+                    <Button x:Name="BookBtn" Click="Button_Click" 
+                            Margin="0,0,0,0" Height="100" Width="480" FontSize="32" Foreground="Gray" BorderBrush="Transparent" Background="Transparent">
+
+                        <StackPanel Orientation="Horizontal" Width="370">
+                            <Image Source="../Assets/BookingIconWhite.png"
+                                   Margin="10,0,10,0" Height="50" Width="50"/>
+                            <TextBlock Text="Book It"
+                                       FontSize="32" FontFamily="Leelawadee" VerticalAlignment="Center" Foreground="White" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
+
+                    <Button x:Name="BackBtn" Click="BackBtn_OnClicked"
+                            Margin="0,0,0,0" Height="100" Width="480" FontSize="32" Foreground="Gray" BorderBrush="Transparent" Background="Transparent">
+
+                        <StackPanel Orientation="Horizontal" Width="370" Margin="-10,0,0,0">
+                            <Image Source="../Assets/LogOutIconWhite.png"
+                                   Margin="0,0,10,0" Height="77" Width="77"/>
+                            <TextBlock Text="Log Out"
+                                       FontSize="32" FontFamily="Leelawadee" VerticalAlignment="Center" Foreground="White" Margin="0,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    <Line Fill="White" Stroke="White" Height="0.5" StrokeThickness="2" X1="480"/>
+
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Frame Grid.Column="1"
+               Grid.RowSpan="5"
+               Width="1445"
+               x:Name="UserMenuFrame"/>
+
+        <Rectangle x:Name="LoadingBG" Fill="White" Width="1920" Height="1080" Visibility="Collapsed" Opacity="0.5" Grid.ColumnSpan="2"/>
+        <Image x:Name="LoadingIMG" Source="../Assets/Wedges.gif" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>

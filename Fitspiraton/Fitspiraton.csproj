@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{A10CB12D-391C-4D85-8FD9-C2FAE280D78A}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fitspiraton</RootNamespace>
+    <AssemblyName>Fitspiraton</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>Fitspiraton_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ActivitySingleton.cs" />
+    <Compile Include="Interfaces\ActivitySingletonList.cs" />
+    <Compile Include="Interfaces\BookingHandler.cs" />
+    <Compile Include="Interfaces\BookingListSingleton.cs" />
+    <Compile Include="Interfaces\BookingSingleton.cs" />
+    <Compile Include="Interfaces\CalendarviewHelper.cs" />
+    <Compile Include="Interfaces\CurrentDateSingleton.cs" />
+    <Compile Include="Interfaces\EventListSingleton.cs" />
+    <Compile Include="Interfaces\FrameNavigateClass.cs" />
+    <Compile Include="Interfaces\SingletonActivity.cs" />
+    <Compile Include="Interfaces\SingletonBMI.cs" />
+    <Compile Include="Interfaces\SingletonMember.cs" />
+    <Compile Include="Model\BMI.cs" />
+    <Compile Include="Model\Booking.cs" />
+    <Compile Include="Persistancy\GetItem.cs" />
+    <Compile Include="View\RecentBookingsView.xaml.cs" />
+    <Compile Include="ViewModel\ActivityVm.cs" />
+    <Compile Include="ViewModel\BMIVm.cs" />
+    <Compile Include="Interfaces\CollectionEventSingleton.cs" />
+    <Compile Include="ViewModel\ManagerBookingsPageVm.cs" />
+    <Compile Include="ViewModel\ManagerEventPageVm.cs" />
+    <Compile Include="ViewModel\RecentBookingsVM.cs" />
+    <Compile Include="ViewModel\SelectedActivityViewVM.cs" />
+    <Compile Include="ViewModel\SerializeUserVm.cs" />
+    <Compile Include="ViewModel\UserBookingVM.cs" />
+    <Compile Include="View\ActivityView.xaml.cs">
+      <DependentUpon>ActivityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Activity.cs" />
+    <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\NotifyPropertyClass.cs" />
+    <Compile Include="Interfaces\RelayCommand.cs" />
+    <Compile Include="ViewModel\Collector.cs" />
+    <Compile Include="ViewModel\LoginVm.cs" />
+    <Compile Include="ViewModel\UserMenuVm.cs" />
+    <Compile Include="View\ManagerBookingsPage.xaml.cs" />
+    <Compile Include="View\ManagerCalendarView.xaml.cs" />
+    <Compile Include="View\ManagerPage.xaml.cs" />
+    <Compile Include="View\ManagerUsersPage.xaml.cs">
+      <DependentUpon>ManagerUsersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\McDonalds.xaml.cs">
+      <DependentUpon>McDonalds.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserBookingView.xaml.cs" />
+    <Compile Include="View\UserMenu.xaml.cs">
+      <DependentUpon>UserMenu.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Assets\LoginPhoto1.psd" />
+    <None Include="Fitspiraton_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\24992826_1313837958722147_986259848_o.jpg" />
+    <Content Include="Assets\AGECalendar.png" />
+    <Content Include="Assets\b3.png" />
+    <Content Include="Assets\BackgroundCalendarGym.jpg" />
+    <Content Include="Assets\BackGroundDesign1.jpg" />
+    <Content Include="Assets\BackGroundDesign3.jpg" />
+    <Content Include="Assets\BackgroundDesign4.png" />
+    <Content Include="Assets\BackGroundDesign5.jpg" />
+    <Content Include="Assets\BackgroundUsers.jpg" />
+    <Content Include="Assets\ballet.jpg" />
+    <Content Include="Assets\ballet2.jpg" />
+    <Content Include="Assets\ballet3.jpg" />
+    <Content Include="Assets\bg2.jpg" />
+    <Content Include="Assets\bg4.jpg" />
+    <Content Include="Assets\BMIApplePNG.png" />
+    <Content Include="Assets\BMILegend.png" />
+    <Content Include="Assets\book.png" />
+    <Content Include="Assets\BookingIcon.png" />
+    <Content Include="Assets\BookingIconWhite.png" />
+    <Content Include="Assets\button.png" />
+    <Content Include="Assets\c.bmp" />
+    <Content Include="Assets\CreateUser.png" />
+    <Content Include="Assets\DanceStudioBackground.jpg" />
+    <Content Include="Assets\Edit User.png" />
+    <Content Include="Assets\fencing.jpg" />
+    <Content Include="Assets\fencing2.jpg" />
+    <Content Include="Assets\Fitness 6.jpg" />
+    <Content Include="Assets\Fitness 7.jpg" />
+    <Content Include="Assets\fitness.jpg" />
+    <Content Include="Assets\FitspirationDesign\Fitness 6.jpg" />
+    <Content Include="Assets\FitspirationDesign\LogoFitspiration.jpg" />
+    <Content Include="Assets\fitspiration_icon white.png" />
+    <Content Include="Assets\fitspiration_icon.png" />
+    <Content Include="Assets\fitspiration_logo Orange.png" />
+    <Content Include="Assets\fitspiration_logo White.png" />
+    <Content Include="Assets\fitspiration_logo.png" />
+    <Content Include="Assets\GradientBackGroundProfile.png" />
+    <Content Include="Assets\HistoryIcon.png" />
+    <Content Include="Assets\HistoryIconWhite.png" />
+    <Content Include="Assets\ID Icon.png" />
+    <Content Include="Assets\ID Icon2.png" />
+    <Content Include="Assets\ID Icon2White.png" />
+    <Content Include="Assets\iStock-546460120.jpg" />
+    <Content Include="Assets\kangoo.jpg" />
+    <Content Include="Assets\kangoo2.jpg" />
+    <Content Include="Assets\karate.jpg" />
+    <Content Include="Assets\karate2.jpg" />
+    <Content Include="Assets\ListIconWhite.png" />
+    <Content Include="Assets\LocationIcon.png" />
+    <Content Include="Assets\LocationIcon2.png" />
+    <Content Include="Assets\LocationIcon2WhiteComplete.png" />
+    <Content Include="Assets\LogoFitspiration.jpg" />
+    <Content Include="Assets\LogOutIcon.png" />
+    <Content Include="Assets\LogOutIconWhite.png" />
+    <Content Include="Assets\PassWordIcon.png" />
+    <Content Include="Assets\PassWordIconWhite.png" />
+    <Content Include="Assets\pole.jpg" />
+    <Content Include="Assets\pole2.jpg" />
+    <Content Include="Assets\price.png" />
+    <Content Include="Assets\ProfileIcon.png" />
+    <Content Include="Assets\ProfileIconWhite.png" />
+    <Content Include="Assets\recentbookings.jpg" />
+    <Content Include="Assets\salsa.jpg" />
+    <Content Include="Assets\SettingsIcon.png" />
+    <Content Include="Assets\swing.jpg" />
+    <Content Include="Assets\tenis.png" />
+    <Content Include="Assets\tennis.jpg" />
+    <Content Include="Assets\trainer.png" />
+    <Content Include="Assets\Wedges.gif" />
+    <Content Include="Assets\weight-training-key-weight-loss.jpg" />
+    <Content Include="Assets\workout-package_1.png" />
+    <Content Include="Assets\yoga.jpg" />
+    <Content Include="Assets\yoga2.jpg" />
+    <Content Include="Assets\zumba.jpg" />
+    <Content Include="Assets\zumba2.jpg" />
+    <Content Include="nonet.html" />
+    <Content Include="Assets\LogoTrnasparent.png" />
+    <Content Include="Assets\logOut.png" />
+    <Content Include="Assets\own images\activities\backgrounds\bg.jpg" />
+    <Content Include="Assets\own images\activities\backgrounds\fitnessbg.jpg" />
+    <Content Include="Assets\own images\activities\backgrounds\salsabg.jpg" />
+    <Content Include="Assets\own images\activities\backgrounds\yogabg.jpg" />
+    <Content Include="Assets\own images\activities\thumbnails\fitness_thumbnail.png" />
+    <Content Include="Assets\own images\activities\thumbnails\salsa_thumbnail.png" />
+    <Content Include="Assets\own images\activities\thumbnails\testActivity.png" />
+    <Content Include="Assets\own images\activities\thumbnails\yoga_thumbnail.png" />
+    <Content Include="Assets\own images\backbutton.png" />
+    <Content Include="Assets\own images\bg.jpg" />
+    <Content Include="Assets\person-icon.png" />
+    <Content Include="Assets\resentIMG.png" />
+    <Content Include="Assets\UP\arya.jpg" />
+    <Content Include="Assets\UP\bran.jpg" />
+    <Content Include="Assets\UP\daenerys.jpg" />
+    <Content Include="Assets\UP\jon.jpg" />
+    <Content Include="Assets\UP\ned.jpg" />
+    <Content Include="Assets\UP\sansa.jpg" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\bg3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="View\RecentBookingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ActivityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ManagerBookingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ManagerCalendarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ManagerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ManagerUsersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\McDonalds.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserBookingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="MSBuild.Extension.Pack">
+      <Version>1.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="MyToolkit.Extended">
+      <Version>2.5.16</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Html\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
