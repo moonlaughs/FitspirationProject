@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fitspiraton.Model
 {
+    // -----------
     public class BMI
     {
         //auto properties
